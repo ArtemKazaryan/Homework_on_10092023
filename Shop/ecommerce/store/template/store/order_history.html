@@ -1,0 +1,11 @@
+ <h2>Order History</h2>
+     {% for order in orders %}
+     <div>
+         <h3>{{ order }}</h3>
+         <ul>
+             {% for item in order.products.all %}
+             <li>{{ item.product.name }} ({{ item.quantity }})</li>
+             {% endfor %}
+         </ul>
+     </div>
+     {% endfor %}
